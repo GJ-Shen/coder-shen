@@ -14,7 +14,7 @@ Function.prototype.apply = function (ctx, args = []) {
     if (!Array.isArray(args)) {
         throw new Error ('args must be a array')
     }
-    ctx = ctx === null || ctx === undefined ? window : Object(ctx)
+    ctx = (ctx === null || ctx === undefined) ? window : Object(ctx)
     // 使用 symbol 防止和其他属性重复
     const key = Symbol()
     ctx[key] = this
@@ -30,6 +30,7 @@ Function.prototype.bind = function (ctx, ...args) {
         const key = Symbol()
         ctx[key] = fn
         const result = ctx[key](...restArgs, ...args)
+        delete ctx[key]
         return result
     }
 }
