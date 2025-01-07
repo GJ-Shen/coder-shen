@@ -20,10 +20,3 @@ function throttle (func, interval) {
         }
     }
 }
-
-Function.prototype.myBind = function (context, ...args) {
-    const func = this
-    return function (...newArgs) {
-        return func.apply(context, [...args, ...newArgs])
-    }
-}
