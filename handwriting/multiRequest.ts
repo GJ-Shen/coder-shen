@@ -7,9 +7,6 @@ function multiRequest (urls, max) {
     let resolveCount = 0
     return new Promise ((resolve, reject) => {
         const run = () => {
-            if (resolveCount >= total && activeCount === 0) {
-                return resolve(results)
-            }
             while (resolveCount < total && activeCount < max) {
                 const current = resolveCount++
                 activeCount++
@@ -23,8 +20,10 @@ function multiRequest (urls, max) {
                     results[current] = err
                 })
                 .finally(() => {
-                    // 递归调用run检查是否可以启动下一个请求
                     activeCount--
+                    if (resolveCount === total && activeCount === 0) {
+                        return resolve(results)
+                    }
                     run()
                 })
             }
