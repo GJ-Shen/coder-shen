@@ -1,3 +1,4 @@
+// 关键字： 闭包，this
 Function.prototype.call = function (ctx, ...args) {
     // 重写上下文
     ctx = (ctx === null || ctx === undefined) ? window : Object(ctx)

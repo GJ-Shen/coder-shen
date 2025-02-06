@@ -1,3 +1,4 @@
+// 关键字： 递归，类型判断
 function deepClone (value, cache = new WeakMap()) {
     if (value === null || typeof value !== 'object') {
         return value

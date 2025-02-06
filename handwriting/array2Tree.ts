@@ -1,6 +1,7 @@
+// 关键字： 复用对象引用缓存节点关系
 function arrayToTree(data: { id: string; parentId: string | null; [key: string]: any } []) {
-    const map = {};
-    const result = [];
+    const map: {[key: string]: any} = {};
+    const result: any[] = [];
   
     // 1. 遍历数据，将每个节点以 id 为键存储到 map 中
     data.forEach(item => {

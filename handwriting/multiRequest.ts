@@ -1,3 +1,4 @@
+// 关键字： 递归
 function multiRequest (urls, max) {
     const total = urls.length
     const results = new Array(total).fill(null)
