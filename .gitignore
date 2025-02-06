@@ -1,0 +1,15 @@
+# Node.js
+node_modules/
+
+# npm logs
+npm-debug.log*
+
+# dotenv environment variables file
+.env
+
+# macOS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
