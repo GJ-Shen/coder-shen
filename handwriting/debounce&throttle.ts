@@ -1,3 +1,4 @@
+// 关键字： 闭包，this
 function debounce (func, delay) {
     let timer
     return function (...args) {
