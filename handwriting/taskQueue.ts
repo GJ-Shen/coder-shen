@@ -42,22 +42,24 @@ queue.run(() => {
 */
 
 class TaskQueue {
+  private tasks
+  private concurrency
+  private active
     constructor(concurrency) {
       // 实现构造函数
       this.tasks = []
-      this.max = concurrency
+      this.concurrency = concurrency
       this.active = 0
     }
   
     addTask(task) {
       // 实现添加任务的方法
       this.tasks.push(task)
-      this.all++
     }
   
     run(callback) {
       // 实现运行任务队列的方法
-      while (this.active < this.max && this.tasks.length > 0) {
+      while (this.active < this.concurrency && this.tasks.length > 0) {
         const task = this.tasks.shift()
         this.active++
         task().then(() => {
