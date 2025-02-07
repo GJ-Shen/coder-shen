@@ -1,5 +1,5 @@
 // 关键字： 复用对象引用缓存节点关系
-function arrayToTree(data: { id: string; parentId: string | null; [key: string]: any } []) {
+function array2tree(data: { id: string; parentId: string | null; [key: string]: any } []) {
     const map: {[key: string]: any} = {};
     const result: any[] = [];
   
@@ -23,3 +23,15 @@ function arrayToTree(data: { id: string; parentId: string | null; [key: string]:
   
     return result;
   }
+
+  function tree2array (data: { id: string; name: string; children: any[] }[]) {
+    const result: any[] = []
+    data.forEach((item) => {
+        result.push(item)
+        if (item.children?.length) {
+            const childTree = tree2array(item.children)
+            result.push(...childTree)
+        } 
+    })
+    return result
+}
