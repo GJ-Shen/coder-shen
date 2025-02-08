@@ -1,10 +1,16 @@
 {
   "devDependencies": {
-    "husky": "^9.1.7",
+    "husky": "^8.0.0",
     "lint-staged": "^15.4.3",
     "prettier": "^3.4.2"
   },
   "lint-staged": {
-  "**/*.{js,ts,jsx,tsx,json,css,md}": "prettier --write"
-}
+    "**/*.{js,ts,jsx,tsx,json,css,md}": "prettier --write"
+  },
+  "scripts": {
+    "prepare": "husky && husky install"
+  },
+  "dependencies": {
+    "husky-init": "^8.0.0"
+  }
 }
