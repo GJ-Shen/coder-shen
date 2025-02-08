@@ -1,3 +1,4 @@
+// 关键字：各方法返回this
 class Calculator {
     value: number
     constructor (value) {
