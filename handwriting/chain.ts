@@ -37,12 +37,12 @@ function calculator (value: number) {
         },
     
         decrease (num) {
-           value -= num
+            value -= num
             return this
         },
     
         times (num) {
-           value *= num
+            value *= num
             return this
         },
     
