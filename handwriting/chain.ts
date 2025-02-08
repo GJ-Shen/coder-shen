@@ -54,6 +54,6 @@ function calculator (value: number) {
     
         getValue () {
             return value
-        }
+                    }
     }
 }
